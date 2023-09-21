@@ -8796,7 +8796,7 @@ h1, h2, h3, h4, h5,
 
 .resume-wrap {
   width: 100%;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   background: rgba(255, 255, 255, 0.1);
   padding: 30px;
   -webkit-border-radius: 5px;
@@ -8804,8 +8804,8 @@ h1, h2, h3, h4, h5,
   -ms-border-radius: 5px;
   border-radius: 5px; }
   .resume-wrap .date {
-    font-weight: 900;
-    font-size: 26px;
+    font-weight: 700;
+    font-size: 24px;
     color: #5168fb; }
   .resume-wrap h2 {
     font-size: 26px; }
