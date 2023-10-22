@@ -9080,8 +9080,9 @@ textarea.form-control {
   background: #3c312e; }
 
 .ftco-footer {
-  font-size: 16px;
-  background: #000000;
+  font-size: 18px;
+  background: #0056b3;
+  color: #fff;
   padding: 7em 0;
   z-index: 0; }
   .ftco-footer .ftco-footer-logo {
