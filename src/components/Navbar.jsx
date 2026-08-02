@@ -1,43 +1,36 @@
-import { useState, useEffect } from 'react';
-import { navLinks } from '../data/profile';
+import { profile } from '../data/profile';
+
+const baseUrl = import.meta.env.BASE_URL;
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
-    window.addEventListener('scroll', onScroll);
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
-
-  const handleNavClick = () => setMenuOpen(false);
-
   return (
-    <header className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`}>
-      <div className="container navbar__inner">
-        <a href="#home" className="navbar__brand" onClick={handleNavClick}>
-          Annarhysa<span className="accent">.</span>
-        </a>
-
-        <button
-          className={`navbar__toggle ${menuOpen ? 'is-open' : ''}`}
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Toggle navigation"
-          aria-expanded={menuOpen}
-        >
-          <span />
-          <span />
-          <span />
-        </button>
-
-        <nav className={`navbar__nav ${menuOpen ? 'is-open' : ''}`}>
-          {navLinks.map(({ href, label }) => (
-            <a key={href} href={href} className="navbar__link" onClick={handleNavClick}>
-              {label}
+    <header className="navbar">
+      <div className="navbar__inner">
+        <div className="navbar__content">
+          <div className="navbar__meta navbar__meta--left">
+            <a href={`https://maps.google.com/?q=${encodeURIComponent(profile.location)}`} target="_blank" rel="noreferrer">
+              {profile.location}
             </a>
-          ))}
-        </nav>
+            <span>•</span>
+            <a href={`mailto:${profile.email}`}>{profile.email}</a>
+            <span>•</span>
+            <a href={`tel:${profile.phone.replace(/\s/g, '')}`}>{profile.phone}</a>
+          </div>
+
+          <div className="navbar__brand">
+            Times of Annarhysa
+          </div>
+
+          <div className="navbar__meta navbar__meta--right">
+            <a href={profile.links.github} target="_blank" rel="noreferrer">GitHub</a>
+            <span>•</span>
+            <a href={profile.links.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
+            <span>•</span>
+            <a href={`${baseUrl}CV/AnnaCV.pdf`} download="Annarhysa-Albert-CV.pdf">
+              Resume
+            </a>
+          </div>
+        </div>
       </div>
     </header>
   );

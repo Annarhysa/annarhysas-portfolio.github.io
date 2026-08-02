@@ -6,32 +6,28 @@ export default function Projects() {
       <div className="container">
         <header className="section__header">
           <span className="section__label">Portfolio</span>
-          <h2 className="section__title">Featured Projects</h2>
+          <h2 className="section__title">Projects of Note</h2>
         </header>
 
-        <div className="projects-grid">
-          {projects.map((project) => (
-            <a
+        <div className="projects-list">
+          {projects.map((project, index) => (
+            <div
               key={project.name}
-              href={project.link}
-              className="project-card"
-              target="_blank"
-              rel="noreferrer"
+              className={`project-item ${index % 2 === 0 ? 'project-item--alt' : ''}`}
             >
-              <div className="project-card__image">
+              <div className="project-item__image">
                 <img src={project.image} alt={project.name} loading="lazy" />
-                <div className="project-card__overlay" />
               </div>
-              <div className="project-card__body">
-                <h3>{project.name}</h3>
-                <p>{project.description}</p>
-                <div className="tag-list">
+              <div className="project-item__content">
+                <h3 className="project-item__title">{project.name}</h3>
+                <p className="project-item__description">{project.description}</p>
+                <div className="project-item__tags">
                   {project.stack.map((tech) => (
-                    <span key={tech} className="tag tag--sm">{tech}</span>
+                    <span key={tech} className="project-item__tag">{tech}</span>
                   ))}
                 </div>
               </div>
-            </a>
+            </div>
           ))}
         </div>
       </div>

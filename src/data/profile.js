@@ -29,20 +29,25 @@ export const experience = [
     roles: [
       {
         title: 'Software Development Engineer II',
+        shortTitle: 'SDE II',
         period: 'Jan 2026 – Apr 2026',
+        categories: ['Full-Stack Engineering', 'ETL Pipelines', 'Serverless AWS'],
         highlights: [
+          'Built scalable backend workflows by integrating WordPress with serverless AWS functions and UI/UX updates. Streamlined the shisha.com data extraction and management pipeline for consistency and reliability.',
           'Innovated an ImageKit wrapper for shisha.com (AIR Global) to efficiently cache user-generated images during ETL processes.',
-          'Built scalable backend workflows by integrating WordPress with serverless AWS functions and UI/UX updates.',
-          'Streamlined the shisha.com data extraction and management pipeline for consistency and reliability.',
         ],
+        skills: ['Next.js', 'AWS Lambda', 'AWS', 'Python', 'WordPress', 'ETL'],
       },
       {
         title: 'Software Development Engineer I',
+        shortTitle: 'SDE I',
         period: 'Jul 2025 – Jan 2026',
+        categories: ['Azure ETL', 'Next.js Full-Stack', 'Data Pipelines'],
         highlights: [
           'Designed and developed a sustainable Azure-based ETL pipeline for shisha.com with Python.',
           'Built full-stack features in Next.js, contributing to end-to-end development across frontend and backend systems.',
         ],
+        skills: ['Azure', 'Python', 'ETL', 'Next.js'],
       },
     ],
   },
@@ -52,11 +57,14 @@ export const experience = [
     roles: [
       {
         title: 'SWE Trainee',
+        shortTitle: 'SWE Trainee',
         period: 'Sep 2024 – Jun 2025',
+        categories: ['Network Testing', 'Automation', 'QA & Log Monitoring'],
         highlights: [
           'SLNBI-MantaRay NM testing and performance checks using Robots, NAPET, Python, Shell scripting, and Jenkins.',
           'Integrated Graylog for log monitoring and resolved SONARQube violations for QA purposes.',
         ],
+        skills: ['Python', 'Shell', 'Jenkins', 'Graylog', 'SonarQube', 'NAPET'],
       },
     ],
   },
@@ -66,10 +74,13 @@ export const experience = [
     roles: [
       {
         title: "Nexus Spring '24 ML Trainee",
+        shortTitle: "Nexus Spring '24 ML Trainee",
         period: 'Feb 2024 – Jun 2024',
+        categories: ['LLM Fine-Tuning', 'PEFT', 'Python Problem Solving'],
         highlights: [
           'Worked on planning and designing a pipeline for fine-tuning the Llama 2-7B model, specialising in Python problem solving using PEFT methods.',
         ],
+        skills: ['Llama 2-7B', 'PEFT', 'Llama', 'Python', 'Problem Solving'],
       },
     ],
   },
@@ -79,10 +90,13 @@ export const experience = [
     roles: [
       {
         title: 'Machine Learning Engineer',
+        shortTitle: 'Machine Learning Engineer',
         period: 'Sep 2023 – Apr 2024',
+        categories: ['Transformers', 'NLP', 'Food Data Analysis'],
         highlights: [
           'Implemented food engineering principles to analyse scraped restaurant reviews using transformer-based models.',
         ],
+        skills: ['Transformers', 'NLP', 'Python', 'Web scraping'],
       },
     ],
   },
