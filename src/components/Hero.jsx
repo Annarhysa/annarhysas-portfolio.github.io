@@ -1,5 +1,7 @@
 import { profile } from '../data/profile';
 
+const baseUrl = import.meta.env.BASE_URL;
+
 export default function Hero() {
   return (
     <section id="home" className="hero">
@@ -29,7 +31,7 @@ export default function Hero() {
             <a href={profile.links.github} className="btn btn--outline" target="_blank" rel="noreferrer">
               View GitHub
             </a>
-            <a href="/CV/AnnaCV.pdf" className="btn btn--ghost" download="Annarhysa-Albert-CV">
+            <a href={`${baseUrl}CV/AnnaCV.pdf`} className="btn btn--ghost" download="Annarhysa-Albert-CV">
               Download CV
             </a>
           </div>
@@ -37,7 +39,7 @@ export default function Hero() {
 
         <div className="hero__visual">
           <div className="hero__image-wrap">
-            <img src="/images/about.png" alt={profile.name} className="hero__image" />
+            <img src={`${baseUrl}images/about.png`} alt={profile.name} className="hero__image" />
             <div className="hero__image-ring" />
           </div>
         </div>

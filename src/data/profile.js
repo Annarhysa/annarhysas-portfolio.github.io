@@ -1,3 +1,5 @@
+const baseUrl = import.meta.env.BASE_URL;
+
 export const profile = {
   name: 'Annarhysa Albert',
   title: 'AI Engineering Student & Software Developer',
@@ -138,7 +140,7 @@ export const projects = [
       'A crime-awareness dashboard with contextually tuned engines for victim support recommendations along with crime rate analysis.',
     stack: ['Python', 'NLP', 'Fine-tuning', 'Time-series', 'LLMs', 'Transformers'],
     link: 'https://github.com/Annarhysa',
-    image: '/images/project-1.png',
+    image: `${baseUrl}images/project-1.png`,
   },
   {
     name: 'MoodMate',
@@ -146,7 +148,7 @@ export const projects = [
       'A buddy to talk and guide you. Uses prompt tuning to understand your feelings and get you the right help.',
     stack: ['Python', 'LLMs', 'NLP'],
     link: 'https://github.com/Annarhysa',
-    image: '/images/project-2.jpg',
+    image: `${baseUrl}images/project-2.jpg`,
   },
   {
     name: 'Stock Market Advisor',
@@ -154,28 +156,28 @@ export const projects = [
       'Machine learning application for stock trend prediction and investment insights.',
     stack: ['Python', 'TensorFlow', 'Data Science'],
     link: 'https://github.com/Annarhysa/Stock-Market-Advisor',
-    image: '/images/project-5.jpeg',
+    image: `${baseUrl}images/project-5.jpeg`,
   },
   {
     name: 'CareerWise',
     description: 'Built to assist secondary-level students with career choices.',
     stack: ['Dart', 'Python', 'ML'],
     link: 'https://github.com/Annarhysa/CareerWise',
-    image: '/images/project-4.jpg',
+    image: `${baseUrl}images/project-4.jpg`,
   },
   {
     name: 'Rare Word Summarizing',
     description: 'Identifying only rare words in a text to create a summary.',
     stack: ['NLTK', 'TF-IDF', 'NLP'],
     link: 'https://github.com/Annarhysa/Rare-Word-Handling-NLP',
-    image: '/images/project-6.jpg',
+    image: `${baseUrl}images/project-6.jpg`,
   },
   {
     name: 'Fine-tuning LLMs',
     description: 'For Python problem-solving by fine-tuning Llama 2-7B model.',
     stack: ['LLMs', 'PEFT', 'NLTK'],
     link: 'https://github.com/Annarhysa',
-    image: '/images/project-3.png',
+    image: `${baseUrl}images/project-3.png`,
   },
 ];
 

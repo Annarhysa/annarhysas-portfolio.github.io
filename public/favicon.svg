@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="A favicon">
+  <rect width="64" height="64" rx="16" fill="#0f172a" />
+  <path d="M20 46L32 16l12 30" stroke="#7c3aed" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+  <path d="M24 36h16" stroke="#22d3ee" stroke-width="6" stroke-linecap="round" />
+  <circle cx="32" cy="14" r="4" fill="#22d3ee" />
+</svg>
