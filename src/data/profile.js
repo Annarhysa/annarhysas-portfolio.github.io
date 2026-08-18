@@ -11,6 +11,7 @@ export const profile = {
     linkedin: 'https://www.linkedin.com/in/annarhysa-albert-92550918b/',
     github: 'https://github.com/Annarhysa',
     portfolio: 'https://annarhysas-portfolio.github.io',
+    googleScholar: 'https://scholar.google.com/citations?user=vn4gLBoAAAAJ&hl=en',
   },
   about:
     'Pursuing an MSc in Artificial Intelligence Engineering at Universität Passau, Germany. Software Development Engineer with experience across AWS, Azure, and full-stack development — specializing in scalable backend workflows, ETL pipelines, and AI/ML solutions from fine-tuning LLMs to production-grade data systems.',
@@ -139,16 +140,16 @@ export const projects = [
     description:
       'A crime-awareness dashboard with contextually tuned engines for victim support recommendations along with crime rate analysis.',
     stack: ['Python', 'NLP', 'Fine-tuning', 'Time-series', 'LLMs', 'Transformers'],
-    link: 'https://github.com/Annarhysa',
-    image: `${baseUrl}images/project-1.png`,
+    link: 'https://github.com/Annarhysa/protego',
+    image: `${baseUrl}images/1.png`,
   },
   {
     name: 'MoodMate',
     description:
       'A buddy to talk and guide you. Uses prompt tuning to understand your feelings and get you the right help.',
     stack: ['Python', 'LLMs', 'NLP'],
-    link: 'https://github.com/Annarhysa',
-    image: `${baseUrl}images/project-2.jpg`,
+    link: 'https://github.com/Annarhysa/MoodMate',
+    image: `${baseUrl}images/2.png`,
   },
   {
     name: 'Stock Market Advisor',
@@ -156,37 +157,57 @@ export const projects = [
       'Machine learning application for stock trend prediction and investment insights.',
     stack: ['Python', 'TensorFlow', 'Data Science'],
     link: 'https://github.com/Annarhysa/Stock-Market-Advisor',
-    image: `${baseUrl}images/project-5.jpeg`,
+    image: `${baseUrl}images/3.png`,
   },
   {
     name: 'CareerWise',
     description: 'Built to assist secondary-level students with career choices.',
     stack: ['Dart', 'Python', 'ML'],
     link: 'https://github.com/Annarhysa/CareerWise',
-    image: `${baseUrl}images/project-4.jpg`,
+    image: `${baseUrl}images/4.png`,
   },
   {
     name: 'Rare Word Summarizing',
     description: 'Identifying only rare words in a text to create a summary.',
     stack: ['NLTK', 'TF-IDF', 'NLP'],
     link: 'https://github.com/Annarhysa/Rare-Word-Handling-NLP',
-    image: `${baseUrl}images/project-6.jpg`,
+    image: `${baseUrl}images/5.png`,
   },
   {
     name: 'Fine-tuning LLMs',
     description: 'For Python problem-solving by fine-tuning Llama 2-7B model.',
     stack: ['LLMs', 'PEFT', 'NLTK'],
-    link: 'https://github.com/Annarhysa',
-    image: `${baseUrl}images/project-3.png`,
+    link: 'https://github.com/Annarhysa/Fine-tuning-LLMs',
+    image: `${baseUrl}images/6.png`,
   },
 ];
 
 export const accomplishments = [
-  "Microsoft Code; Without Barriers '24 Winner",
-  "Qualified for the third round of Smart India Hackathon (SIH) '23",
-  'Published: Crime Awareness Dashboard with Contextual AI Tuning Engine — Protego',
-  'Published: Mental Health Support Chatbot',
+  {
+    text: "Microsoft Code; Without Barriers '24 Winner",
+    image: `${baseUrl}images/CWB.jpg`,
+    link: 'https://www.linkedin.com/posts/annarhysa-albert-92550918b_hackathonjourney-codewithoutbarriers-mentalhealthtech-ugcPost-7237328187347632128-cFP_/?utm_source=share&utm_medium=member_desktop&rcm=ACoAACy_be0B6U4BtqDk32QOd6GdXjBohazqesk',
+  },
+  {
+    text: "Qualified for the third round of Smart India Hackathon (SIH) '23",
+    image: `${baseUrl}images/SIH.jpg`,
+    link: 'https://www.linkedin.com/posts/annarhysa-albert-92550918b_linkedin-machinelearning-hackathon-ugcPost-7113371109508464640-SDBb/?utm_source=share&utm_medium=member_desktop&rcm=ACoAACy_be0B6U4BtqDk32QOd6GdXjBohazqesk',
+  },
+  {
+    text: 'Published: Crime Awareness Dashboard with Contextual AI Tuning Engine — Protego',
+    link: 'https://www.taylorfrancis.com/chapters/edit/10.1201/9781003773801-2/crime-awareness-dashboard-contextual-ai-tuning-engine%E2%80%94protego-annarhysa-albert-prithvi-raja-shah-raguvaran',
+  },
+  {
+    text: 'Published: Mental Health Support Chatbot',
+    link: 'https://ieeexplore.ieee.org/abstract/document/10780017',
+  },
 ];
+
+export const featuredAccomplishment = {
+  text: 'Speaker at AI FORGE: Build, Innovate, Evolve, hosted by GDSC SRM Ghaziabad',
+  image: `${baseUrl}images/AI.jpg`,
+  link: 'https://www.linkedin.com/posts/annarhysa-albert-92550918b_aiforge-ai-ml-ugcPost-7334458134737969152-AOFJ/?utm_source=share&utm_medium=member_desktop&rcm=ACoAACy_be0B6U4BtqDk32QOd6GdXjBohazqesk',
+};
 
 export const activities = [
   'Supporting AYCD: Ubuntu Mondo in international student engagement, social media management, event coordination, and website migration initiatives.',
@@ -197,11 +218,66 @@ export const activities = [
   'Supported underprivileged education efforts as a Crowdfunding Intern at Muskurahat Foundation.',
 ];
 
+export const hobbies = [
+  {
+    name: 'Chess',
+    description: 'Strategic thinking and problem-solving through the game of kings',
+    icon: '♟️'
+  },
+  {
+    name: 'Sports',
+    description: 'Active lifestyle with various sports and physical activities',
+    icon: '🏃'
+  },
+  {
+    name: 'Music',
+    description: 'Curated playlist for focus and inspiration',
+    icon: '🎵',
+    link: 'https://open.spotify.com/playlist/6VhDTq51xfhG9MBBopKdHt?si=O103JKmzSPSTUUfwXviaCg&utm_source=whatsapp&pi=l0Iol3m9QauyA'
+  }
+];
+
+export const blogs = [
+  {
+    title: 'Building Trust in Location Data: Designing a Scoring System for Reliable Venue Listings',
+    abstract: 'How a trust-scoring system can filter out unreliable venue listings and improve location data quality.',
+    url: 'https://medium.com/@annarhysa13/building-trust-in-location-data-designing-a-scoring-system-for-reliable-venue-listings-29aa8aad87eb',
+    date: '2024',
+    category: 'Data Engineering'
+  },
+  {
+    title: 'Revolutionizing Finance with Artificial Intelligence: Trends and Opportunities in 2024',
+    abstract: 'A look at how AI-driven trends are reshaping financial services and where the biggest opportunities lie.',
+    url: 'https://medium.com/@annarhysa13/revolutionizing-finance-with-artificial-intelligence-trends-and-opportunities-in-2024-5e76fc75de98',
+    date: '2024',
+    category: 'AI & Finance'
+  },
+  {
+    title: 'Crypto Analysis',
+    abstract: 'A data-driven look at cryptocurrency market trends and what they signal for investors.',
+    url: 'https://medium.com/@annarhysa13/crypto-analysis-87a273ac676f',
+    date: '2024',
+    category: 'Cryptocurrency'
+  },
+  {
+    title: 'Comparative Analysis of Rare Word Handling Strategies in Text Summarization Models',
+    abstract: 'Comparing strategies for handling rare vocabulary to improve text summarization quality.',
+    url: 'https://medium.com/@annarhysa13/comparative-analysis-of-rare-word-handling-strategies-in-text-summarization-models-f7b23354c7cb',
+    date: '2024',
+    category: 'NLP Research'
+  }
+];
+
 export const navLinks = [
   { href: '#home', label: 'Home' },
   { href: '#about', label: 'About' },
   { href: '#experience', label: 'Experience' },
-  { href: '#skills', label: 'Skills' },
+  { href: '#education', label: 'Education' },
+  { href: '#skills', label: 'Expertise' },
   { href: '#projects', label: 'Projects' },
-  { href: '#contact', label: 'Contact' },
+  { href: '#accomplishments', label: 'Recognition' },
+  { href: '#activities', label: 'Community' },
+  { href: '#hobbies', label: 'Personal' },
+  { href: '#blogs', label: 'Writing' },
+  { href: '#contact', label: 'Get in Touch' },
 ];

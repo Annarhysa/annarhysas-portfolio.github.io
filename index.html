@@ -7,9 +7,35 @@
     <meta name="author" content="Annarhysa Albert" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-    <link rel="icon" type="image/svg+xml" href="%BASE_URL%favicon.svg" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link id="favicon" rel="icon" type="image/svg+xml" href="favicon-light.svg" />
     <title>Annarhysa Albert | Portfolio</title>
+    <script>
+      (function () {
+        var link = document.getElementById('favicon');
+        var base = link.getAttribute('href').replace(/favicon-(light|dark)\.svg$/, '');
+        var media = window.matchMedia('(prefers-color-scheme: dark)');
+
+        function apply(theme) {
+          document.documentElement.setAttribute('data-theme', theme);
+          link.setAttribute('href', base + 'favicon-' + theme + '.svg');
+        }
+
+        var stored = localStorage.getItem('theme');
+        apply(stored || (media.matches ? 'dark' : 'light'));
+
+        if (!stored) {
+          media.addEventListener('change', function (e) {
+            apply(e.matches ? 'dark' : 'light');
+          });
+        }
+
+        window.__setTheme = function (theme) {
+          localStorage.setItem('theme', theme);
+          apply(theme);
+        };
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

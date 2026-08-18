@@ -1,40 +1,46 @@
 import { projects } from '../data/profile';
+import ScrollArrow from './ScrollArrow';
 
 export default function Projects() {
   return (
     <section id="projects" className="section">
-      <div className="container">
-        <header className="section__header">
-          <span className="section__label">Portfolio</span>
-          <h2 className="section__title">Featured Projects</h2>
-        </header>
+      <header className="section__header">
+        <span className="section__label">Projects</span>
+        <h2 className="section__title">Projects of Note</h2>
+      </header>
 
-        <div className="projects-grid">
-          {projects.map((project) => (
-            <a
-              key={project.name}
-              href={project.link}
-              className="project-card"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <div className="project-card__image">
-                <img src={project.image} alt={project.name} loading="lazy" />
-                <div className="project-card__overlay" />
+      <div className="projects-list">
+        {projects.map((project) => (
+          <div key={project.name} className="project-item">
+            <div className="project-item__image">
+              <img src={project.image} alt={project.name} />
+            </div>
+            <div className="project-item__content">
+              <div className="project-item__head">
+                <div className="project-item__tag">{project.stack[0]}</div>
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="arrow-link project-item__link"
+                  aria-label={`View ${project.name} on GitHub`}
+                >
+                  ↗
+                </a>
               </div>
-              <div className="project-card__body">
-                <h3>{project.name}</h3>
-                <p>{project.description}</p>
-                <div className="tag-list">
-                  {project.stack.map((tech) => (
-                    <span key={tech} className="tag tag--sm">{tech}</span>
-                  ))}
-                </div>
+              <h3 className="project-item__name">{project.name}</h3>
+              <p className="project-item__description">{project.description}</p>
+              <div className="project-item__tags">
+                {project.stack.map(tech => (
+                  <span key={tech} className="tag">{tech}</span>
+                ))}
               </div>
-            </a>
-          ))}
-        </div>
+            </div>
+          </div>
+        ))}
       </div>
+
+      <ScrollArrow currentId="projects" />
     </section>
   );
 }

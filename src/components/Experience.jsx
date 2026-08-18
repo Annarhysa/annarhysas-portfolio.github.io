@@ -1,43 +1,49 @@
 import { experience } from '../data/profile';
+import ScrollArrow from './ScrollArrow';
+
+function formatPeriod(period) {
+  return period.replace(/\s*[–-]\s*/g, ' – ');
+}
+
+function getCity(location) {
+  return location.replace(/\s*\([^)]*\)/, '').trim();
+}
+
+const experienceEntries = experience.flatMap((item) =>
+  item.roles.map((role) => ({
+    ...role,
+    company: item.company,
+    city: getCity(item.location),
+  }))
+);
 
 export default function Experience() {
   return (
-    <section id="experience" className="section section--alt">
-      <div className="container">
-        <header className="section__header">
-          <span className="section__label">Career</span>
-          <h2 className="section__title">Professional Experience</h2>
-        </header>
+    <section id="experience" className="section">
+      <header className="section__header">
+        <span className="section__label">Experience</span>
+        <h2 className="section__title">Career on Record</h2>
+      </header>
 
-        <div className="timeline">
-          {experience.map((item) => (
-            <article key={item.company} className="timeline__item">
-              <div className="timeline__marker" />
-
-              <div className="timeline__card">
-                <div className="timeline__company">
-                  <h3>{item.company}</h3>
-                  <span className="timeline__location">{item.location}</span>
-                </div>
-
-                {item.roles.map((role) => (
-                  <div key={role.title} className="timeline__role">
-                    <div className="timeline__role-header">
-                      <h4>{role.title}</h4>
-                      <time>{role.period}</time>
-                    </div>
-                    <ul className="timeline__highlights">
-                      {role.highlights.map((point) => (
-                        <li key={point}>{point}</li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
-              </div>
-            </article>
-          ))}
-        </div>
+      <div className="experience-record">
+        {experienceEntries.map((entry) => (
+          <div key={`${entry.company}-${entry.title}-${entry.period}`} className="experience-record__entry">
+            <h3 className="experience-record__company">{entry.company}</h3>
+            <p className="experience-record__title">{entry.title}</p>
+            <div className="experience-record__meta">
+              <span className="experience-record__period">{formatPeriod(entry.period).toUpperCase()}</span>
+              <span className="experience-record__location">{entry.city}</span>
+            </div>
+            <ul className="experience-record__highlights">
+              {entry.highlights.map((highlight, i) => (
+                <li key={i}>{highlight}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
       </div>
+
+      <ScrollArrow currentId="experience" />
     </section>
   );
 }

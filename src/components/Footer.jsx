@@ -7,7 +7,7 @@ export default function Footer() {
     <footer className="footer">
       <div className="container footer__inner">
         <div className="footer__brand">
-          <a href="#home" className="navbar__brand">
+          <a href="#home">
             Annarhysa<span className="accent">.</span>
           </a>
           <p>{profile.tagline}</p>
