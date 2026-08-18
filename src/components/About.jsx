@@ -1,36 +1,32 @@
-import { profile } from '../data/profile';
+import { profile, skills } from '../data/profile';
+import ScrollArrow from './ScrollArrow';
+
+const highlightSkills = [...skills.aiMl.slice(0, 4), ...skills.toolsDevOps.slice(0, 5)];
 
 export default function About() {
   return (
     <section id="about" className="section">
-      <div className="container">
-        <header className="section__header">
-          <span className="section__label">About Me</span>
-          <h2 className="section__title">Who I Am</h2>
-        </header>
+      <header className="section__header">
+        <span className="section__label">About</span>
+        <h2 className="section__title">Profile</h2>
+      </header>
 
-        <div className="about__grid">
-          <div className="about__content">
-            <p className="about__text">{profile.about}</p>
-
-            <ul className="about__info">
-              <li><strong>Name</strong><span>{profile.name}</span></li>
-              <li><strong>Location</strong><span>{profile.location}</span></li>
-              <li><strong>Email</strong><span><a href={`mailto:${profile.email}`}>{profile.email}</a></span></li>
-              <li><strong>Phone</strong><span><a href={`tel:${profile.phone.replace(/\s/g, '')}`}>{profile.phone}</a></span></li>
-            </ul>
-          </div>
-
-          <div className="about__stats">
-            {profile.stats.map(({ value, label }) => (
-              <div key={label} className="stat-card">
-                <span className="stat-card__value">{value}</span>
-                <span className="stat-card__label">{label}</span>
-              </div>
+      <div className="summary-grid">
+        <div className="summary-col">
+          <p className="drop-cap">{profile.about}</p>
+        </div>
+        <div className="summary-rule" />
+        <div className="summary-right">
+          <p className="summary-tagline">{profile.tagline}</p>
+          <div className="pill-row">
+            {highlightSkills.map((skill, i) => (
+              <span key={skill} className={`pill ${i === 0 ? 'red' : ''}`}>{skill}</span>
             ))}
           </div>
         </div>
       </div>
+
+      <ScrollArrow currentId="about" />
     </section>
   );
 }
