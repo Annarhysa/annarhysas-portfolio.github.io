@@ -205,6 +205,7 @@ button { font: inherit; background: none; border: none; cursor: pointer; }
   flex-direction: column;
   scroll-snap-align: start;
   scroll-snap-stop: always;
+  scroll-margin-top: var(--nav-height);
   overflow: hidden;
 }
 
@@ -327,6 +328,7 @@ button { font: inherit; background: none; border: none; cursor: pointer; }
   justify-content: center;
   scroll-snap-align: start;
   scroll-snap-stop: always;
+  scroll-margin-top: var(--nav-height);
 }
 .section:last-of-type { border-bottom: none; }
 .section__header {
@@ -350,6 +352,8 @@ button { font: inherit; background: none; border: none; cursor: pointer; }
   font-size: clamp(30px, 4vw, 46px);
   font-weight: 700;
   flex: 1;
+  min-width: 0;
+  overflow-wrap: break-word;
   border-bottom: 1px solid var(--light-gray);
   padding-bottom: 10px;
   margin-left: 4px;
@@ -969,6 +973,8 @@ button { font: inherit; background: none; border: none; cursor: pointer; }
   .crossword__cell { font-size: 13px; }
   .activities-list { grid-template-columns: 1fr; }
   .section { padding: 24px 18px; }
+  .section__header { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .section__title { margin-left: 0; font-size: clamp(26px, 8vw, 38px); }
   .masthead { padding: 20px 16px 12px; }
   .footer__inner { flex-direction: column; align-items: flex-start; }
   html { scroll-snap-type: y proximity; }
