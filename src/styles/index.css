@@ -980,7 +980,9 @@ button { font: inherit; background: none; border: none; cursor: pointer; }
   .navbar__location { display: none; }
   .home-block { height: auto; overflow: visible; }
   .photo-strip { grid-template-columns: 1fr; flex: none; min-height: auto; }
-  .photo-col { height: 200px; }
+  .photo-col { height: 220px; }
+  .photo-col:not(.photo-col--right) img { object-position: center 18%; }
+  .photo-col--right img { object-position: center 55%; }
   .photo-col-center { padding: 20px; }
   .photo-strip-rule { display: none; }
   .summary-grid, .experience-record { grid-template-columns: 1fr; column-count: 1; }
