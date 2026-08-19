@@ -1,12 +1,15 @@
-import { hobbies } from '../data/profile';
+import { useLanguage } from '../context/LanguageContext';
 import ScrollArrow from './ScrollArrow';
 
 export default function Hobbies() {
+  const { content, t } = useLanguage();
+  const { hobbies } = content;
+
   return (
     <section id="hobbies" className="section">
       <header className="section__header">
-        <span className="section__label">Personal</span>
-        <h2 className="section__title">Hobbies & Interests</h2>
+        <span className="section__label">{t.hobbies.label}</span>
+        <h2 className="section__title">{t.hobbies.title}</h2>
       </header>
 
       <div className="hobbies-grid">
@@ -16,13 +19,13 @@ export default function Hobbies() {
             <h3 className="hobby-card__name">{hobby.name}</h3>
             <p className="hobby-card__description">{hobby.description}</p>
             {hobby.link && (
-              <a 
-                href={hobby.link} 
-                target="_blank" 
+              <a
+                href={hobby.link}
+                target="_blank"
                 rel="noreferrer"
                 className="hobby-card__link"
               >
-                View Playlist →
+                {t.hobbies.viewPlaylist} →
               </a>
             )}
           </div>

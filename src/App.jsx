@@ -1,3 +1,4 @@
+import { LanguageProvider } from './context/LanguageContext';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import PhotoStrip from './components/PhotoStrip';
@@ -15,7 +16,7 @@ import Footer from './components/Footer';
 
 export default function App() {
   return (
-    <>
+    <LanguageProvider>
       <Navbar />
       <article className="paper">
         <div id="home" className="home-block">
@@ -36,6 +37,6 @@ export default function App() {
         </main>
         <Footer />
       </article>
-    </>
+    </LanguageProvider>
   );
 }

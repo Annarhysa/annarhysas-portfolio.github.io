@@ -198,6 +198,31 @@ button { font: inherit; background: none; border: none; cursor: pointer; }
 .dropdown__menu a:last-child { border-bottom: none; }
 .dropdown__menu a:hover { background: var(--chip); color: var(--red); }
 
+/* ── Language dropdown ── */
+.dropdown--lang { flex-shrink: 0; }
+.dropdown__trigger--icon {
+  gap: 5px;
+  padding: 6px 9px;
+}
+.dropdown__menu--lang { min-width: 130px; }
+.dropdown__menu--lang button {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 10px 14px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  color: var(--ink);
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--light-gray);
+  cursor: pointer;
+}
+.dropdown__menu--lang button:last-child { border-bottom: none; }
+.dropdown__menu--lang button:hover { background: var(--chip); color: var(--red); }
+.dropdown__menu--lang button.is-active { color: var(--red); font-weight: 600; }
+
 /* ── Full-viewport section snapping ── */
 .home-block {
   height: calc(100vh - var(--nav-height));

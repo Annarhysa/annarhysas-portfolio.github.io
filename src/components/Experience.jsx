@@ -1,4 +1,4 @@
-import { experience } from '../data/profile';
+import { useLanguage } from '../context/LanguageContext';
 import ScrollArrow from './ScrollArrow';
 
 function formatPeriod(period) {
@@ -9,20 +9,23 @@ function getCity(location) {
   return location.replace(/\s*\([^)]*\)/, '').trim();
 }
 
-const experienceEntries = experience.flatMap((item) =>
-  item.roles.map((role) => ({
-    ...role,
-    company: item.company,
-    city: getCity(item.location),
-  }))
-);
-
 export default function Experience() {
+  const { content, t } = useLanguage();
+  const { experience } = content;
+
+  const experienceEntries = experience.flatMap((item) =>
+    item.roles.map((role) => ({
+      ...role,
+      company: item.company,
+      city: getCity(item.location),
+    }))
+  );
+
   return (
     <section id="experience" className="section">
       <header className="section__header">
-        <span className="section__label">Experience</span>
-        <h2 className="section__title">Career on Record</h2>
+        <span className="section__label">{t.experience.label}</span>
+        <h2 className="section__title">{t.experience.title}</h2>
       </header>
 
       <div className="experience-record">

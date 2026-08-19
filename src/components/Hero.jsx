@@ -1,6 +1,9 @@
-import { profile } from '../data/profile';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function Hero() {
+  const { content } = useLanguage();
+  const { profile } = content;
+
   return (
     <section className="masthead">
       <h1 className="masthead__headline">Annarhysa<br />Albert</h1>

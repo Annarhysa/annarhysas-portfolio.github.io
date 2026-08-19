@@ -1,12 +1,15 @@
-import { education } from '../data/profile';
+import { useLanguage } from '../context/LanguageContext';
 import ScrollArrow from './ScrollArrow';
 
 export default function Education() {
+  const { content, t } = useLanguage();
+  const { education } = content;
+
   return (
     <section id="education" className="section">
       <header className="section__header">
-        <span className="section__label">Education</span>
-        <h2 className="section__title">Academic Background</h2>
+        <span className="section__label">{t.education.label}</span>
+        <h2 className="section__title">{t.education.title}</h2>
       </header>
 
       <div className="education-list">
@@ -16,14 +19,14 @@ export default function Education() {
               <h3>{entry.degree}</h3>
               <p className="education-card__school">{entry.school}</p>
               {entry.cgpa && (
-                <span className="education-card__cgpa">CGPA: {entry.cgpa}</span>
+                <span className="education-card__cgpa">{t.education.cgpa}: {entry.cgpa}</span>
               )}
             </div>
 
             <div className="education-card__details">
               {entry.achievements.length > 0 && (
                 <div>
-                  <h4>Achievements</h4>
+                  <h4>{t.education.achievements}</h4>
                   <ul>
                     {entry.achievements.map((item) => (
                       <li key={item}>{item}</li>
@@ -32,7 +35,7 @@ export default function Education() {
                 </div>
               )}
               <div className={entry.achievements.length === 0 ? 'education-card__courses--full' : ''}>
-                <h4>Key Courses</h4>
+                <h4>{t.education.keyCourses}</h4>
                 <div className="tag-list">
                   {entry.courses.map((course) => (
                     <span key={course} className="tag">{course}</span>

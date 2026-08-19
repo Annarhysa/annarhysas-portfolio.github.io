@@ -1,12 +1,15 @@
-import { projects } from '../data/profile';
+import { useLanguage } from '../context/LanguageContext';
 import ScrollArrow from './ScrollArrow';
 
 export default function Projects() {
+  const { content, t } = useLanguage();
+  const { projects } = content;
+
   return (
     <section id="projects" className="section">
       <header className="section__header">
-        <span className="section__label">Projects</span>
-        <h2 className="section__title">Projects of Note</h2>
+        <span className="section__label">{t.projects.label}</span>
+        <h2 className="section__title">{t.projects.title}</h2>
       </header>
 
       <div className="projects-list">
