@@ -1,12 +1,15 @@
-import { activities } from '../data/profile';
+import { useLanguage } from '../context/LanguageContext';
 import ScrollArrow from './ScrollArrow';
 
 export default function Activities() {
+  const { content, t } = useLanguage();
+  const { activities } = content;
+
   return (
     <section id="activities" className="section">
       <header className="section__header">
-        <span className="section__label">Community</span>
-        <h2 className="section__title">Activities & Volunteering</h2>
+        <span className="section__label">{t.activities.label}</span>
+        <h2 className="section__title">{t.activities.title}</h2>
       </header>
 
       <ul className="activities-list">

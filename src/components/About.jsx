@@ -1,14 +1,16 @@
-import { profile, skills } from '../data/profile';
+import { useLanguage } from '../context/LanguageContext';
 import ScrollArrow from './ScrollArrow';
 
-const highlightSkills = [...skills.aiMl.slice(0, 4), ...skills.toolsDevOps.slice(0, 5)];
-
 export default function About() {
+  const { content, t } = useLanguage();
+  const { profile, skills } = content;
+  const highlightSkills = [...skills.aiMl.slice(0, 4), ...skills.toolsDevOps.slice(0, 5)];
+
   return (
     <section id="about" className="section">
       <header className="section__header">
-        <span className="section__label">About</span>
-        <h2 className="section__title">Profile</h2>
+        <span className="section__label">{t.about.label}</span>
+        <h2 className="section__title">{t.about.title}</h2>
       </header>
 
       <div className="summary-grid">
