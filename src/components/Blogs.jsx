@@ -1,12 +1,15 @@
-import { blogs } from '../data/profile';
+import { useLanguage } from '../context/LanguageContext';
 import ScrollArrow from './ScrollArrow';
 
 export default function Blogs() {
+  const { content, t } = useLanguage();
+  const { blogs } = content;
+
   return (
     <section id="blogs" className="section">
       <header className="section__header">
-        <span className="section__label">Writing</span>
-        <h2 className="section__title">Technical Blog Posts</h2>
+        <span className="section__label">{t.blogs.label}</span>
+        <h2 className="section__title">{t.blogs.title}</h2>
       </header>
 
       <div className="blogs-grid">

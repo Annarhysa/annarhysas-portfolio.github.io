@@ -1,6 +1,8 @@
-import { profile, navLinks } from '../data/profile';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function Footer() {
+  const { content, t } = useLanguage();
+  const { profile, navLinks } = content;
   const year = new Date().getFullYear();
 
   return (
@@ -28,7 +30,7 @@ export default function Footer() {
 
       <div className="footer__bottom">
         <div className="container">
-          <p>&copy; {year} {profile.name}. All rights reserved.</p>
+          <p>&copy; {year} {profile.name}. {t.footer.allRightsReserved}</p>
         </div>
       </div>
     </footer>
