@@ -16,7 +16,7 @@ export const profile = {
   about:
     'Pursuing an MSc in Artificial Intelligence Engineering at Universität Passau, Germany. Software Development Engineer with experience across AWS, Azure, and full-stack development — specializing in scalable backend workflows, ETL pipelines, and AI/ML solutions from fine-tuning LLMs to production-grade data systems.',
   stats: [
-    { value: '4', label: 'Companies' },
+    { value: '6', label: 'Companies' },
     { value: '6', label: 'Projects' },
     { value: '9.62', label: 'CGPA' },
     { value: '3', label: 'Languages Spoken' },
@@ -25,24 +25,47 @@ export const profile = {
 
 export const experience = [
   {
+    company: 'Stanford University',
+    location: 'Remote',
+    roles: [
+      {
+        title: 'Section Leader – Code in Place',
+        period: 'Oct 2026 – Present',
+        highlights: [
+          'Leading weekly sections to help 20 learners understand probability concepts and their applications in AI for the online course adaptation of CS109.',
+          'Preparing and delivering engaging content and problem-solving activities using Stanford’s course materials.',
+        ],
+      },
+    ],
+  },
+  {
     company: 'Codewalla',
     location: 'Pune (On-site)',
     roles: [
       {
-        title: 'Software Development Engineer II',
-        period: 'Jan 2026 – Apr 2026',
+        title: 'Software Development Engineer I',
+        period: 'Jul 2025 – Apr 2026',
         highlights: [
-          'Innovated an ImageKit wrapper for shisha.com (AIR Global) to efficiently cache user-generated images during ETL processes.',
-          'Built scalable backend workflows by integrating WordPress with serverless AWS functions and UI/UX updates.',
-          'Streamlined the shisha.com data extraction and management pipeline for consistency and reliability.',
+          'Engineered an ImageKit wrapper for shisha.com (AIR Global) to cache and manage 50,000+ user-generated images within ETL workflows, improving image delivery and reducing redundant processing.',
+          'Built backend workflows integrating WordPress with serverless AWS functions and UI/UX enhancements, enabling automated data processing and streamlined application workflows.',
+          'Optimised the shisha.com data extraction and management pipeline to process 1000+ records, improving data consistency and reliability across downstream workflows.',
+          'Designed and architected an Azure-based ETL pipeline using Python to automate the extraction, transformation, and processing of 100+ records, reducing manual data-processing effort.',
+          'Implemented full-stack features in Next.js, contributing to end-to-end development across frontend and backend systems.',
         ],
       },
+    ],
+  },
+  {
+    company: 'Independent Web Development Consultant',
+    location: 'Self',
+    roles: [
       {
-        title: 'Software Development Engineer I',
-        period: 'Jul 2025 – Jan 2026',
+        title: 'Evangelist',
+        period: 'Jun 2026 – Sep 2026',
+        startsColumn: true,
         highlights: [
-          'Designed and developed a sustainable Azure-based ETL pipeline for shisha.com with Python.',
-          'Built full-stack features in Next.js, contributing to end-to-end development across frontend and backend systems.',
+          'Consulted with small businesses on their digital presence and recommended tailored website solutions aligned with their goals, customer needs, and brand values.',
+          'Identified opportunities to improve business visibility and customer engagement through digital platforms.',
         ],
       },
     ],
@@ -93,8 +116,10 @@ export const education = [
   {
     degree: 'Master of Science: Artificial Intelligence Engineering',
     school: 'Universität Passau, Passau, Germany',
-    cgpa: null,
-    achievements: [],
+    cgpa: '2.6/1.0',
+    achievements: [
+      'Deutschlandstipendium 2026/27.',
+    ],
     courses: [
       'DL for Natural Language', 'Network Science', 'Digitisation with AI',
       'DL in Finance', 'Reproducibility Engg.',
@@ -184,6 +209,11 @@ export const projects = [
 
 export const accomplishments = [
   {
+    text: 'Awarded with Deutschlandstipendium 2026/27',
+    image: `${baseUrl}images/stipendium.jpeg`,
+    icon: '🎓',
+  },
+  {
     text: "Microsoft Code; Without Barriers '24 Winner",
     image: `${baseUrl}images/CWB.jpg`,
     link: 'https://www.linkedin.com/posts/annarhysa-albert-92550918b_hackathonjourney-codewithoutbarriers-mentalhealthtech-ugcPost-7237328187347632128-cFP_/?utm_source=share&utm_medium=member_desktop&rcm=ACoAACy_be0B6U4BtqDk32QOd6GdXjBohazqesk',
@@ -195,6 +225,7 @@ export const accomplishments = [
   },
   {
     text: 'Published: Crime Awareness Dashboard with Contextual AI Tuning Engine — Protego',
+    wide: true,
     link: 'https://www.taylorfrancis.com/chapters/edit/10.1201/9781003773801-2/crime-awareness-dashboard-contextual-ai-tuning-engine%E2%80%94protego-annarhysa-albert-prithvi-raja-shah-raguvaran',
   },
   {

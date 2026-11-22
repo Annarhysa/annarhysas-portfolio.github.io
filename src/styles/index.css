@@ -230,7 +230,6 @@ button { font: inherit; background: none; border: none; cursor: pointer; }
   flex-direction: column;
   scroll-snap-align: start;
   scroll-snap-stop: always;
-  scroll-margin-top: var(--nav-height);
   overflow: hidden;
 }
 
@@ -353,7 +352,6 @@ button { font: inherit; background: none; border: none; cursor: pointer; }
   justify-content: center;
   scroll-snap-align: start;
   scroll-snap-stop: always;
-  scroll-margin-top: var(--nav-height);
 }
 .section:last-of-type { border-bottom: none; }
 .section__header {
@@ -472,6 +470,7 @@ button { font: inherit; background: none; border: none; cursor: pointer; }
   border-bottom: 1px solid var(--light-gray);
 }
 .experience-record__entry:last-child { border-bottom: none; }
+.experience-record__entry--column-start { break-before: column; }
 .experience-record__company {
   font-family: var(--font-display);
   font-weight: 700;
@@ -720,7 +719,7 @@ button { font: inherit; background: none; border: none; cursor: pointer; }
 #accomplishments .section__header { margin-bottom: 10px; }
 .accomplishments-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   grid-auto-rows: auto;
   gap: 10px;
 }
@@ -739,7 +738,7 @@ button { font: inherit; background: none; border: none; cursor: pointer; }
 }
 .accomplishment-card__image {
   width: 100%;
-  height: 220px;
+  height: 260px;
   overflow: hidden;
   margin-bottom: 8px;
   border-bottom: 1px solid var(--light-gray);
@@ -765,9 +764,15 @@ button { font: inherit; background: none; border: none; cursor: pointer; }
 .accomplishment-card__link {
   margin-top: 2px;
 }
+.accomplishment-card__icon {
+  font-size: 18px;
+  line-height: 1;
+  margin-top: 2px;
+}
+.accomplishment-card--wide { grid-column: span 2; }
 
 .accomplishment-featured {
-  grid-column: 3;
+  grid-column: 4;
   grid-row: 1 / 3;
   display: flex;
   flex-direction: column;
@@ -777,7 +782,8 @@ button { font: inherit; background: none; border: none; cursor: pointer; }
 .accomplishment-featured:hover { border-color: var(--red); }
 .accomplishment-featured__image {
   width: 100%;
-  height: 278px;
+  flex: 1 1 320px;
+  min-height: 320px;
   overflow: hidden;
   border-bottom: 1px solid var(--light-gray);
 }
@@ -928,11 +934,11 @@ button { font: inherit; background: none; border: none; cursor: pointer; }
 }
 .footer__inner {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  gap: 16px;
-  padding: 18px 0;
+  text-align: center;
+  gap: 8px;
+  padding: 12px 0 0;
 }
 .footer__brand {
   font-family: var(--font-display);
@@ -943,19 +949,9 @@ button { font: inherit; background: none; border: none; cursor: pointer; }
   font-family: var(--font-body);
   font-size: 12.5px;
   color: var(--gray);
-  margin-top: 5px;
-  max-width: 260px;
+  margin-top: 4px;
 }
-.footer__nav { display: flex; flex-wrap: wrap; gap: 4px 14px; }
-.footer__nav a {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: var(--ink);
-}
-.footer__nav a:hover { color: var(--red); }
-.footer__social { display: flex; gap: 14px; }
+.footer__social { display: flex; justify-content: center; gap: 14px; }
 .footer__social a {
   font-family: var(--font-mono);
   font-size: 11px;
@@ -964,8 +960,8 @@ button { font: inherit; background: none; border: none; cursor: pointer; }
 }
 .footer__social a:hover { color: var(--red); }
 .footer__bottom {
-  border-top: 1px solid var(--light-gray);
-  padding: 10px 0;
+  margin-top: 8px;
+  padding-bottom: 8px;
 }
 .footer__bottom p {
   font-family: var(--font-mono);
@@ -993,6 +989,7 @@ button { font: inherit; background: none; border: none; cursor: pointer; }
   .projects-list { grid-template-columns: 1fr; }
   .blogs-grid { grid-template-columns: 1fr; }
   .accomplishments-grid { grid-template-columns: 1fr; }
+  .accomplishment-card--wide { grid-column: auto; }
   .accomplishment-featured { grid-column: 1; grid-row: auto; }
   .accomplishment-featured__image { height: 160px; flex: none; }
   .crossword { grid-template-columns: 1fr; gap: 20px; }
@@ -1003,7 +1000,7 @@ button { font: inherit; background: none; border: none; cursor: pointer; }
   .section__header { flex-direction: column; align-items: flex-start; gap: 8px; }
   .section__title { margin-left: 0; font-size: clamp(26px, 8vw, 38px); }
   .masthead { padding: 20px 16px 12px; }
-  .footer__inner { flex-direction: column; align-items: flex-start; }
+  .footer__inner { gap: 8px; }
   html { scroll-snap-type: y proximity; }
   .section, .home-block { scroll-snap-stop: normal; }
 }

@@ -14,7 +14,10 @@ export default function Accomplishments() {
 
       <div className="accomplishments-grid">
         {accomplishments.map((item) => (
-          <div key={item.text} className={`accomplishment-card${item.image ? ' accomplishment-card--media' : ''}`}>
+          <div
+            key={item.text}
+            className={`accomplishment-card${item.image ? ' accomplishment-card--media' : ''}${item.wide ? ' accomplishment-card--wide' : ''}`}
+          >
             {item.image && (
               <div className="accomplishment-card__image">
                 <img src={item.image} alt={item.text} />
@@ -22,16 +25,20 @@ export default function Accomplishments() {
             )}
             <div className="accomplishment-card__text">
               <p>{item.text}</p>
-              {item.link && (
-                <a
-                  href={item.link}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="arrow-link accomplishment-card__link"
-                  aria-label={`Read more about: ${item.text}`}
-                >
-                  ↗
-                </a>
+              {item.icon ? (
+                <span className="accomplishment-card__icon" aria-hidden="true">{item.icon}</span>
+              ) : (
+                item.link && (
+                  <a
+                    href={item.link}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="arrow-link accomplishment-card__link"
+                    aria-label={`Read more about: ${item.text}`}
+                  >
+                    ↗
+                  </a>
+                )
               )}
             </div>
           </div>

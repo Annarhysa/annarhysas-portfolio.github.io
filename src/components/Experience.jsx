@@ -30,7 +30,7 @@ export default function Experience() {
 
       <div className="experience-record">
         {experienceEntries.map((entry) => (
-          <div key={`${entry.company}-${entry.title}-${entry.period}`} className="experience-record__entry">
+          <div key={`${entry.company}-${entry.title}-${entry.period}`} className={`experience-record__entry${entry.startsColumn ? ' experience-record__entry--column-start' : ''}`}>
             <h3 className="experience-record__company">{entry.company}</h3>
             <p className="experience-record__title">{entry.title}</p>
             <div className="experience-record__meta">
