@@ -2,7 +2,7 @@ import { useLanguage } from '../context/LanguageContext';
 
 export default function Footer() {
   const { content, t } = useLanguage();
-  const { profile, navLinks } = content;
+  const { profile } = content;
   const year = new Date().getFullYear();
 
   return (
@@ -14,12 +14,6 @@ export default function Footer() {
           </a>
           <p>{profile.tagline}</p>
         </div>
-
-        <nav className="footer__nav">
-          {navLinks.map(({ href, label }) => (
-            <a key={href} href={href}>{label}</a>
-          ))}
-        </nav>
 
         <div className="footer__social">
           <a href={profile.links.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn">LinkedIn</a>
