@@ -982,6 +982,8 @@ button { font: inherit; background: none; border: none; cursor: pointer; }
   .photo-col-center { padding: 20px; }
   .photo-strip-rule { display: none; }
   .summary-grid, .experience-record { grid-template-columns: 1fr; column-count: 1; }
+  .experience-record { display: block; }
+  .experience-record__entry--column-start { break-before: auto; }
   .summary-rule { display: none; }
   .summary-right { border-top: 1px solid var(--light-gray); padding-top: 16px; margin-top: 16px; padding-left: 0; }
   .education-list { grid-template-columns: 1fr; }
@@ -996,11 +998,28 @@ button { font: inherit; background: none; border: none; cursor: pointer; }
   .crossword__grid { margin: 0 auto; grid-template-columns: repeat(6, 32px); grid-template-rows: repeat(7, 32px); }
   .crossword__cell { font-size: 13px; }
   .activities-list { grid-template-columns: 1fr; }
-  .section { padding: 24px 18px; }
+  .section { padding: 36px 18px; min-height: 0; }
   .section__header { flex-direction: column; align-items: flex-start; gap: 8px; }
   .section__title { margin-left: 0; font-size: clamp(26px, 8vw, 38px); }
   .masthead { padding: 20px 16px 12px; }
   .footer__inner { gap: 8px; }
-  html { scroll-snap-type: y proximity; }
-  .section, .home-block { scroll-snap-stop: normal; }
+  html { scroll-snap-type: none; }
+  .section, .home-block { scroll-snap-align: none; scroll-snap-stop: normal; }
+}
+
+@media (max-width: 420px) {
+  .navbar__inner { gap: 6px; padding: 0 0.75rem; }
+  .navbar__pill { font-size: 9px; letter-spacing: 0.06em; padding: 4px 8px; white-space: nowrap; }
+  .navbar__name { font-size: 14px; white-space: nowrap; }
+  .dropdown__trigger { font-size: 10px; padding: 6px 8px; gap: 4px; }
+  .dropdown__trigger--icon { padding: 6px 7px; }
+  .theme-toggle { width: 28px; height: 28px; }
+}
+
+@media (max-width: 360px) {
+  .navbar__inner { grid-template-columns: 1fr auto; }
+  .navbar__center { grid-column: 1; justify-content: flex-start; min-width: 0; }
+  .navbar__right { grid-column: 2; }
+  .navbar__pill { font-size: 8px; padding: 4px 6px; }
+  .navbar__name { font-size: 13px; }
 }
